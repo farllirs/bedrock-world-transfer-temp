@@ -1,0 +1,44 @@
+name: Construir granja de Enderman
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generar estructuras y comandos
+        run: python build/construir.py
+
+      - name: Validar la granja
+        run: python build/validar.py
+
+      - name: Inyectar las estructuras en el mundo (si hay .mcworld)
+        if: ${{ hashFiles('world/*.mcworld') != '' }}
+        run: python build/empaquetar_mundo.py
+
+      - name: Subir artefactos
+        uses: actions/upload-artifact@v4
+        with:
+          name: granja-enderman-${{ github.run_number }}
+          path: salida/
+          if-no-files-found: error
+
+      - name: Resumen del build
+        run: |
+          {
+            echo '## Resultado'
+            echo ''
+            sed -n '1,25p' salida/informe.txt
+          } >> "$GITHUB_STEP_SUMMARY"

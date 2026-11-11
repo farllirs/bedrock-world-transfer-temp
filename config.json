@@ -1,0 +1,12 @@
+{
+  "granja": {
+    "centro_x": 0,
+    "centro_z": -520,
+    "y_base": 64
+  },
+  "puente": {
+    "lado": "norte",
+    "desde_x": 0,
+    "desde_z": -100
+  }
+}

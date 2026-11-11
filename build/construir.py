@@ -107,13 +107,14 @@ def main():
     ]
 
     linea = cx if eje == 'z' else cz
+    L = puente.LARGO
     for i in range(n):
         if eje == 'z':
-            z0 = inicio - 12 * i - 11 if signo < 0 else inicio + 12 * i
+            z0 = inicio - L * i - (L - 1) if signo < 0 else inicio + L * i
             comandos.append(
                 f'/structure load puente_z {linea - 5} {carga_puente_y} {z0}')
         else:
-            x0 = inicio - 12 * i - 11 if signo < 0 else inicio + 12 * i
+            x0 = inicio - L * i - (L - 1) if signo < 0 else inicio + L * i
             comandos.append(
                 f'/structure load puente_x {x0} {carga_puente_y} {linea - 5}')
     if resto:

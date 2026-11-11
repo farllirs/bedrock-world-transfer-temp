@@ -5,7 +5,7 @@
 - Entidades: 2 (vagoneta + endermita)
 - Centro: 0, -520 · base Y=64 · plataforma Y=116
 - Caída de los Enderman: 48 bloques
-- Puente: 443 bloques hacia el norte (36 piezas de 12 + resto de 11)
+- Puente: 443 bloques hacia el norte (6 piezas de 64 + resto de 59)
 
 ## Materiales
 

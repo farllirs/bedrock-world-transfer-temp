@@ -7,42 +7,12 @@
 
 # --- 2. Puente hacia el norte (443 bloques) ---
 #     el tablero queda al nivel y=67
-/structure load puente_z -5 66 -111
-/structure load puente_z -5 66 -123
-/structure load puente_z -5 66 -135
-/structure load puente_z -5 66 -147
-/structure load puente_z -5 66 -159
-/structure load puente_z -5 66 -171
-/structure load puente_z -5 66 -183
-/structure load puente_z -5 66 -195
-/structure load puente_z -5 66 -207
-/structure load puente_z -5 66 -219
-/structure load puente_z -5 66 -231
-/structure load puente_z -5 66 -243
-/structure load puente_z -5 66 -255
-/structure load puente_z -5 66 -267
-/structure load puente_z -5 66 -279
+/structure load puente_z -5 66 -163
+/structure load puente_z -5 66 -227
 /structure load puente_z -5 66 -291
-/structure load puente_z -5 66 -303
-/structure load puente_z -5 66 -315
-/structure load puente_z -5 66 -327
-/structure load puente_z -5 66 -339
-/structure load puente_z -5 66 -351
-/structure load puente_z -5 66 -363
-/structure load puente_z -5 66 -375
-/structure load puente_z -5 66 -387
-/structure load puente_z -5 66 -399
-/structure load puente_z -5 66 -411
-/structure load puente_z -5 66 -423
-/structure load puente_z -5 66 -435
-/structure load puente_z -5 66 -447
-/structure load puente_z -5 66 -459
-/structure load puente_z -5 66 -471
+/structure load puente_z -5 66 -355
+/structure load puente_z -5 66 -419
 /structure load puente_z -5 66 -483
-/structure load puente_z -5 66 -495
-/structure load puente_z -5 66 -507
-/structure load puente_z -5 66 -519
-/structure load puente_z -5 66 -531
 /structure load puente_z_resto -5 66 -542
 
 # --- 3. Comprobaciones ---

@@ -16,7 +16,8 @@ from bloques import (  # noqa: E402
 
 ANCHO = 11
 ALTO = 7
-LARGO = 12
+LARGO = 64      # máximo horizontal de un .mcstructure
+PASO = 16       # cada cuántos bloques va un arco y un par de faroles
 
 
 def _leaf(u, y, v):
@@ -43,13 +44,13 @@ def _pieza(largo):
                 g.set(u, 2, v, _leaf(u, 2, v))          # seto bajo
             if 4 <= a <= 5:
                 g.set(u, 3, v, _leaf(u, 3, v))          # seto alto
-            if v % LARGO == 0:                          # arco
+            if v % PASO == 0:                           # arco
                 if a == 5:
                     g.set(u, 4, v, PURPUR)
                     g.set(u, 5, v, PURPUR)
                 if a <= 5:
                     g.set(u, 6, v, _leaf(u, 6, v))
-            if v % LARGO == LARGO // 2 and a == 2:      # faroles
+            if v % PASO == PASO // 2 and a == 2:        # faroles
                 g.set(u, 2, v, SEA_LANTERN)
     return g
 

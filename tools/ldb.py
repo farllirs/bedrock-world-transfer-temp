@@ -1,6 +1,17 @@
 import struct, zlib, ctypes, os, glob
-snap=ctypes.CDLL('libsnappy.so.1')
+try:
+    import snappy_py
+except ImportError:
+    snappy_py = None
+try:
+    snap = ctypes.CDLL('libsnappy.so.1')
+except OSError:
+    snap = None
 def snappy_unc(b):
+    if snap is None:
+        if snappy_py is None:
+            raise RuntimeError('falta snappy: instala libsnappy o tools/snappy_py.py')
+        return snappy_py.uncompress(b)
     n=ctypes.c_size_t(0)
     snap.snappy_uncompressed_length(b,len(b),ctypes.byref(n))
     out=ctypes.create_string_buffer(n.value); m=ctypes.c_size_t(n.value)
